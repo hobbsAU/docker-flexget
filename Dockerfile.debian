@@ -1,0 +1,20 @@
+FROM debian:latest
+MAINTAINER Adrian Hobbs <adrianhobbs@gmail.com>
+ENV DEBIAN_FRONTEND noninteractive
+ENV GIT_BRANCH master
+
+# Update packages in base image, avoid caching issues by combining statements, install build software and deps
+RUN	apt-get update -qq && apt-get install -qqy python2.7 python-pip && \
+	rm -rf /var/lib/apt/lists/* && \
+	#Install pip setuptools and flexget
+	pip install --upgrade setuptools && \
+	pip install flexget && \
+	#Clean up removing all build packages and dev libraries, remove unused dependencies and temp files	
+	apt-get autoremove --purge -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+	adduser --disabled-password --gecos '' flexget
+
+USER flexget
+ENV HOME /home/flexget
+
+CMD ["/usr/local/bin/flexget","daemon start"]
+

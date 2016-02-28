@@ -6,7 +6,8 @@ ENV PACKAGE "py-pip"
 RUN	apk add --no-cache $PACKAGE && \
 	pip install --upgrade pip && \
 	pip install --upgrade setuptools && \
-	pip install pytest-runner flexget && \
+	pip install pytest pytest-runner && \
+	pip install flexget && \
 	# Add a user to run as non root
 	adduser -D -g '' flexget
 

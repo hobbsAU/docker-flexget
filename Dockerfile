@@ -8,7 +8,7 @@ RUN	apk add --no-cache $PACKAGE && \
 	pip install --upgrade setuptools && \
 	pip install pytest-runner flexget && \
 	# Add a user to run as non root
-	adduser -D -g '' flexget`
+	adduser -D -g '' flexget
 
 USER flexget
 ENV HOME /home/flexget

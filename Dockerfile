@@ -14,5 +14,5 @@ RUN	apk add --no-cache $PACKAGE && \
 USER flexget
 ENV HOME /home/flexget
 
-CMD ["/usr/bin/flexget","daemon start"]
+CMD ["/usr/bin/flexget","daemon","start"]
 

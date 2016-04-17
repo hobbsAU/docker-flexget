@@ -8,6 +8,8 @@ RUN	apk add --no-cache $PACKAGE && \
 	pip install --upgrade setuptools && \
 	pip install pytest pytest-runner && \
 	pip install flexget && \
+	cp /usr/share/zoneinfo/Australia/Sydney /etc/localtime && \
+	echo "Australia/Sydney" > /etc/timezone && \
 	# Add a user to run as non root
 	adduser -D -g '' flexget
 

@@ -1,4 +1,4 @@
-# docker-flexget [![Docker Pulls](https://img.shields.io/docker/pulls/hobbsau/docker-flexget.svg)](https://hub.docker.com/r/hobbsau/docker-flexget/)
+# docker-flexget [![Docker Pulls](https://img.shields.io/docker/pulls/hobbsau/flexget.svg)](https://hub.docker.com/r/hobbsau/flexget/)
 
 Run flexget from a docker container
 

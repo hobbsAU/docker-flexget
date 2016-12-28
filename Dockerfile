@@ -1,6 +1,6 @@
 FROM alpine:edge
 MAINTAINER Adrian Hobbs <adrianhobbs@gmail.com>
-ENV PACKAGE "py-pip tzdata"
+ENV PACKAGE "py2-pip tzdata"
 
 # Install packages using --no-cache to update index and remove unwanted files and use pip to install the rest
 RUN	apk add --no-cache $PACKAGE && \
